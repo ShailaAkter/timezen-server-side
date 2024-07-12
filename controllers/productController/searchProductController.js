@@ -12,9 +12,10 @@ export const searchProductController = async(req, res) =>
                 {model: {$regex: keyword, $options: "i"}},
                 {dialColor: {$regex: keyword, $options: "i"}},
                 {strapColor: {$regex: keyword, $options: "i"}},
+                {strapMaterial: {$regex: keyword, $options: "i"}},
             ]
         })
-        .select("-photo");
+        .select("-photo")
         res.json(products)
     }
     catch(error)

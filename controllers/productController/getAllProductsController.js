@@ -4,7 +4,7 @@ export const getAllProductsController = async (req, res) =>
 {
     try
     {
-        const products = await productModel.find({}).select("-photo").populate('brand').limit(12).sort({createdAt: -1})
+        const products = await productModel.find({}).select("-photo").populate('brand').sort({createdAt: -1})
 
         res.status(201).send({
             success: true, 

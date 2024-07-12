@@ -13,7 +13,7 @@ export const createProductController = async (req, res) =>
         //validation
         if(!name) 
         {
-            return res.send({message: "Brand name is required!"});
+            return res.send({message: "Watch name is required!"});
         }
         if(!price) 
         {
@@ -27,38 +27,52 @@ export const createProductController = async (req, res) =>
         {
             return res.send({message: "Description is required!"});
         }
-        if (!caseSize) {
+        if (!caseSize) 
+        {
             return res.send({ message: "Case size is required!" });
         }
-        if (!dial) {
+        if (!dial) 
+        {
             return res.send({ message: "Dial information is required!" });
         }
-        if (!dialColor) {
+        if (!dialColor) 
+        {
             return res.send({ message: "Dial color is required!" });
         }
         if (!glassMaterial) {
             return res.send({ message: "Glass material is required!" });
         }
-        if (!movement) {
+        if (!movement) 
+        {
             return res.send({ message: "Movement type is required!" });
         }
-        if (!strapColor) {
+        if (!strapColor) 
+        {
             return res.send({ message: "Strap color is required!" });
         }
-        if (!strapMaterial) {
+        if (!strapMaterial) 
+        {
             return res.send({ message: "Strap material is required!" });
         }
-        if (!waterResistance) {
+        if (!waterResistance) 
+        {
             return res.send({ message: "Water resistance information is required!" });
         }
-        if (!brand) {
+        if (!brand) 
+        {
             return res.send({ message: "Brand information is required!" });
         }
-        if (!quantity) {
+        if (!quantity) 
+        {
             return res.send({ message: "Quantity is required!" });
         }
-        if (!shippingAddress) {
+        if (!shippingAddress) 
+        {
             return res.send({ message: "Shipping address is required!" });
+        }
+        if (!photo) 
+        {
+            return res.send({ message: "Photo is required!" });
         }
 
         const existingProduct = await productModel.findOne({model});
