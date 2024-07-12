@@ -12,6 +12,7 @@ import { productCountController, productPerPageContoller } from '../controllers/
 import { searchProductController } from '../controllers/productController/searchProductController.js';
 import { similarProductController } from '../controllers/productController/similarProductsController.js';
 import { productByBrandController } from '../controllers/productController/productByBrandController.js';
+import { paymentController, tokenController } from '../controllers/productController/paymentGatewayController.js';
 
 const router = express.Router();
 
@@ -50,6 +51,12 @@ router.get('/search-product/:keyword',  searchProductController);
 
 //search product 
 router.get('/similar-products/:productId/:brandId', similarProductController );
+
+//braintree token router for payment
+router.get('/braintree/token', tokenController );
+
+//payments routes
+router.post('/braintree/payment', requireSignIn, paymentController );
 
 
 

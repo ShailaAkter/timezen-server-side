@@ -5,6 +5,7 @@ import { isAdmin, requireSignIn } from "../middlewares/authMiddleware.js";
 import { forgotPasswordController } from "../controllers/authController/ForgotPasswordController.js";
 import { getResetPasswordController, resetPasswordController } from "../controllers/authController/ResetPasswordController.js";
 import { updateProfileController } from "../controllers/authController/UpdateProfileController.js";
+import { getOrdersController } from "../controllers/authController/GetOrdersController.js";
 
 
 //router object
@@ -42,6 +43,9 @@ router.post('/reset-password', resetPasswordController)
 
 //update profile route
 router.put('/update-profile', requireSignIn, updateProfileController)
+
+//user orders route
+router.get('/orders', requireSignIn, getOrdersController)
 
 
 

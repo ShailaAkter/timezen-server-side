@@ -1,5 +1,7 @@
 import slugify from "slugify";
 import productModel from "../../models/productModel/productModel.js";
+import fs from 'fs';
+
 
 export const updateProductController = async (req, res) =>
 {
